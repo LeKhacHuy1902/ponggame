@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pong</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="startMenu">
+        <h1>Pong</h1>
+        <div class="game-mode-selection">
+          <input type="radio" id="onePlayer" name="gameMode" value="1player" checked>
+          <label for="onePlayer">1 Player (vs. CPU)</label><br>
+          <input type="radio" id="twoPlayers" name="gameMode" value="2players">
+          <label for="twoPlayers">2 Players</label>
+        </div>
+        <button id="startBtn">Start Game</button>
+      </div>
+      <div id="pauseMenu">
+        <h1>Paused</h1>
+        <button id="continueBtn">Continue</button>
+        <button id="restartBtn">Restart</button>
+      </div>
+      <div id="gameOverMenu">
+        <h1 id="gameMessage"></h1>
+        <button id="againBtn"></button>
+      </div>
+      <div id="gameplay">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+      </div>
+    </div>
+  </body>
+
+  <script src="index.js"></script>
+</html>

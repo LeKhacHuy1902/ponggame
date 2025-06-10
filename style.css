@@ -1,0 +1,106 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: black;
+  font-family: 'Press Start 2P', cursive; /* Changed font */
+}
+
+#wrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-shadow: 0 0 50px rgba(0, 255, 0, 0.5); /* Added subtle shadow */
+}
+#wrap > div {
+  position: fixed;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  filter: blur(20px);
+  transform: scale(0.5);
+}
+
+#wrap > div.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+#wrap > #gameplay {
+  opacity: 1;
+  z-index: 0;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+#wrap > div.active ~ #gameplay {
+  opacity: 0.75;
+  filter: blur(10px);
+  transform: scale(0.95);
+}
+
+button {
+  background-color: transparent; /* Changed background */
+  border: 2px solid white; /* Added border */
+  border-radius: 5px; /* Slightly less rounded */
+  padding: 16px 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.5px; /* Increased letter spacing */
+  font-size: 18px; /* Slightly larger font */
+  margin: 16px;
+  min-width: 180px; /* Slightly wider buttons */
+  outline: none;
+  transition: 0.25s;
+  opacity: 0.8; /* Slightly less opaque by default */
+  cursor: pointer;
+  color: white; /* Text color for buttons */
+  font-family: 'Press Start 2P', cursive; /* Button font */
+}
+
+button:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Hover shadow */
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 4px; /* Increased letter spacing */
+  font-size: 64px; /* Larger font size */
+  margin-top: 0;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Green glow effect */
+}
+
+/* Thêm vào cuối file style.css */
+.game-mode-selection {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 14px;
+  text-align: left; /* Căn trái cho container */
+  width: fit-content; /* Đảm bảo container vừa với nội dung */
+  margin-left: auto; /* Dùng để căn giữa container nếu cần, nhưng ở đây sẽ bị override bởi padding */
+  margin-right: auto; /* Dùng để căn giữa container nếu cần */
+  padding: 0 20px; /* Thêm padding ngang để tạo khoảng cách từ lề */
+}
+
+.game-mode-selection label {
+  margin-right: 30px; /* Tăng khoảng cách giữa các label */
+  cursor: pointer;
+  display: inline-block; /* Đảm bảo khoảng cách áp dụng */
+  margin-bottom: 10px; /* Khoảng cách giữa các dòng radio button */
+}
+
+.game-mode-selection input[type="radio"] {
+  margin-right: 8px; /* Tăng khoảng cách giữa radio button và label */
+  transform: scale(1.2);
+}
